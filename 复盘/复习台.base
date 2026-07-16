@@ -1,0 +1,22 @@
+views:
+  - type: table
+    name: 表格
+    filters:
+      and:
+        - file.folder.startsWith("复习")
+        - file.ext == "md"
+    groupBy:
+      property: file.folder
+      direction: ASC
+    order:
+      - file.name
+      - file.ctime
+      - 等级
+      - 下次复习
+    sort:
+      - property: 下次复习
+        direction: ASC
+    columnSize:
+      file.name: 124
+      file.ctime: 182
+      note.等级: 95
